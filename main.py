@@ -134,5 +134,6 @@ with gr.Blocks(theme=gr.themes.Soft(primary_hue="blue", neutral_hue="slate"), cs
     </div>
     ''')
 
-# Launch
-app.launch(share=True)
+import os
+port = int(os.environ.get("PORT", 8080))
+app.launch(server_name="0.0.0.0", server_port=port)
